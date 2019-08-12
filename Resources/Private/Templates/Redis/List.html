@@ -1,0 +1,312 @@
+{namespace redis=JBartels\Redisdiag\ViewHelpers}
+
+<f:layout name="Default" />
+
+This Template is responsible for creating a table of Redis objects.
+
+<f:section name="content">
+<h1>Listing for Redis</h1>
+
+<f:flashMessages />
+
+
+<f:if condition="{redisServers -> f:count()}==0">
+   <f:then>
+      <p>Keine Redis-Server konfiguriert.</p>
+    </f:then>
+	<f:else>
+		<table class="tx_redisdiag" >
+
+			<f:comment>
+			 ** server
+			</f:comment>
+
+			<tr>
+				<th><h3><f:translate key="section.server" /></h3></th>
+				<f:for each="{redisServers}" as="server">
+					<td></td>
+				</f:for>
+			</tr>
+
+			<tr>
+				<th><f:translate key="th.ipaddr" /></th>
+				<f:for each="{redisServers}" as="server" key="ipaddr">
+					<td>{ipaddr}</td>
+				</f:for>
+			</tr>
+
+			<tr>
+				<th><f:translate key="th.uptime" /></th>
+				<f:for each="{redisServers}" as="server">
+					<td><redis:duration>{server.uptime_in_seconds}</redis:duration></td>
+				</f:for>
+			</tr>
+
+			<tr>
+				<th><f:translate key="th.mode" /></th>
+				<f:for each="{redisServers}" as="server">
+					<td>{server.redis_mode}</td>
+				</f:for>
+			</tr>
+
+			<tr>
+				<th><f:translate key="th.version" /></th>
+				<f:for each="{redisServers}" as="server">
+					<td>{server.redis_version}</td>
+				</f:for>
+			</tr>
+
+			<tr>
+				<th><f:translate key="th.connected_clients" /></th>
+				<f:for each="{redisServers}" as="server">
+					<td>{server.connected_clients}</td>
+				</f:for>
+			</tr>
+
+			<f:comment>
+			 ** memory
+			</f:comment>
+
+			<tr>
+				<th><h3><f:translate key="section.memory" /></h3></th>
+				<f:for each="{redisServers}" as="server">
+					<td></td>
+				</f:for>
+			</tr>
+
+			<tr>
+				<th><f:translate key="th.used_memory_human" /></th>
+				<f:for each="{redisServers}" as="server">
+					<td>{server.used_memory_human}</td>
+				</f:for>
+			</tr>
+
+			<tr>
+				<th><f:translate key="th.used_memory_rss_human" /></th>
+				<f:for each="{redisServers}" as="server">
+					<td>{server.used_memory_rss_human}</td>
+				</f:for>
+			</tr>
+
+			<tr>
+				<th><f:translate key="th.used_memory_peak_human" /></th>
+				<f:for each="{redisServers}" as="server">
+					<td>{server.used_memory_peak_human}</td>
+				</f:for>
+			</tr>
+
+			<tr>
+				<th><f:translate key="th.used_memory_peak_perc" /></th>
+				<f:for each="{redisServers}" as="server">
+					<td>{server.used_memory_peak_perc}</td>
+				</f:for>
+			</tr>
+
+			<tr>
+				<th><f:translate key="th.used_memory_dataset_perc" /></th>
+				<f:for each="{redisServers}" as="server">
+					<td>{server.used_memory_dataset_perc}</td>
+				</f:for>
+			</tr>
+
+			<tr>
+				<th><f:translate key="th.total_system_memory_human" /></th>
+				<f:for each="{redisServers}" as="server">
+					<td>{server.total_system_memory_human}</td>
+				</f:for>
+			</tr>
+
+			<tr>
+				<th><f:translate key="th.maxmemory_human" /></th>
+				<f:for each="{redisServers}" as="server">
+					<td>{server.maxmemory_human}</td>
+				</f:for>
+			</tr>
+
+			<tr>
+				<th><f:translate key="th.maxmemory_policy" /></th>
+				<f:for each="{redisServers}" as="server">
+					<td>{server.maxmemory_policy}</td>
+				</f:for>
+			</tr>
+
+			<tr>
+				<th><f:translate key="th.mem_fragmentation_ratio" /></th>
+				<f:for each="{redisServers}" as="server">
+					<td>{server.mem_fragmentation_ratio}</td>
+				</f:for>
+			</tr>
+
+			<f:comment>
+			 ** persistence
+			</f:comment>
+
+			<tr>
+				<th><h3><f:translate key="section.persistence" /></h3></th>
+				<f:for each="{redisServers}" as="server">
+					<td></td>
+				</f:for>
+			</tr>
+
+			<tr>
+				<th><f:translate key="th.rdb_changes_since_last_save" /></th>
+				<f:for each="{redisServers}" as="server">
+					<td>{server.rdb_changes_since_last_save}</td>
+				</f:for>
+			</tr>
+
+			<tr>
+				<th><f:translate key="th.rdb_last_save_time" /></th>
+				<f:for each="{redisServers}" as="server">
+					<td><f:format.date format="%Y-%m-%d, %X">{server.rdb_last_save_time}</f:format.date></td>
+				</f:for>
+			</tr>
+
+			<tr>
+				<th><f:translate key="th.rdb_last_bgsave_status" /></th>
+				<f:for each="{redisServers}" as="server">
+					<td>{server.rdb_last_bgsave_status}</td>
+				</f:for>
+			</tr>
+
+			<f:comment>
+			 ** stats
+			</f:comment>
+
+			<tr>
+				<th><h3><f:translate key="section.stats" /></h3></th>
+				<f:for each="{redisServers}" as="server">
+					<td></td>
+				</f:for>
+			</tr>
+
+			<tr>
+				<th><f:translate key="th.total_connections_received" /></th>
+				<f:for each="{redisServers}" as="server">
+					<td>{server.total_connections_received}</td>
+				</f:for>
+			</tr>
+
+			<tr>
+				<th><f:translate key="th.total_commands_processed" /></th>
+				<f:for each="{redisServers}" as="server">
+					<td>{server.total_commands_processed}</td>
+				</f:for>
+			</tr>
+
+			<tr>
+				<th><f:translate key="th.instantaneous_ops_per_sec" /></th>
+				<f:for each="{redisServers}" as="server">
+					<td>{server.instantaneous_ops_per_sec}</td>
+				</f:for>
+			</tr>
+
+			<tr>
+				<th><f:translate key="th.total_net_input_bytes" /></th>
+				<f:for each="{redisServers}" as="server">
+					<td><f:format:bytes>{server.total_net_input_bytes}</f:format:bytes></td>
+				</f:for>
+			</tr>
+
+			<tr>
+				<th><f:translate key="th.total_net_output_bytes" /></th>
+				<f:for each="{redisServers}" as="server">
+					<td><f:format:bytes>{server.total_net_output_bytes}<f:format:bytes></td>
+				</f:for>
+			</tr>
+
+			<tr>
+				<th><f:translate key="th.instantaneous_input_kbps" /></th>
+				<f:for each="{redisServers}" as="server">
+					<td>{server.instantaneous_input_kbps}</td>
+				</f:for>
+			</tr>
+
+			<tr>
+				<th><f:translate key="th.instantaneous_output_kbps" /></th>
+				<f:for each="{redisServers}" as="server">
+					<td>{server.instantaneous_output_kbps}</td>
+				</f:for>
+			</tr>
+
+			<tr>
+				<th><f:translate key="th.rejected_connections" /></th>
+				<f:for each="{redisServers}" as="server">
+					<td>{server.rejected_connections}</td>
+				</f:for>
+			</tr>
+
+			<tr>
+				<th><f:translate key="th.expired_keys" /></th>
+				<f:for each="{redisServers}" as="server">
+					<td>{server.expired_keys}</td>
+				</f:for>
+			</tr>
+
+			<tr>
+				<th><f:translate key="th.evicted_keys" /></th>
+				<f:for each="{redisServers}" as="server">
+					<td>{server.evicted_keys}</td>
+				</f:for>
+			</tr>
+
+			<tr>
+				<th><f:translate key="th.keyspace_hits" /></th>
+				<f:for each="{redisServers}" as="server">
+					<td>{server.keyspace_hits}</td>
+				</f:for>
+			</tr>
+
+			<tr>
+				<th><f:translate key="th.keyspace_misses" /></th>
+				<f:for each="{redisServers}" as="server">
+					<td>{server.keyspace_misses}</td>
+				</f:for>
+			</tr>
+
+			<f:comment>
+			 ** cpu
+			</f:comment>
+
+			<tr>
+				<th><h3><f:translate key="section.cpu" /></h3></th>
+				<f:for each="{redisServers}" as="server">
+					<td></td>
+				</f:for>
+			</tr>
+
+			<tr>
+				<th><f:translate key="th.used_cpu_sys" /></th>
+				<f:for each="{redisServers}" as="server">
+					<td>{server.used_cpu_sys}</td>
+				</f:for>
+			</tr>
+
+			<tr>
+				<th><f:translate key="th.used_cpu_user" /></th>
+				<f:for each="{redisServers}" as="server">
+					<td>{server.used_cpu_user}</td>
+				</f:for>
+			</tr>
+
+			<tr>
+				<th><f:translate key="th.used_cpu_sys_children" /></th>
+				<f:for each="{redisServers}" as="server">
+					<td>{server.used_cpu_sys_children}</td>
+				</f:for>
+			</tr>
+
+			<tr>
+				<th><f:translate key="th.used_cpu_user_children" /></th>
+				<f:for each="{redisServers}" as="server">
+					<td>{server.used_cpu_user_children}</td>
+				</f:for>
+			</tr>
+
+		</table>
+	</f:else>
+</f:if>
+
+<!--f:debug>{redisServers}</f:debug-->
+
+</f:section>

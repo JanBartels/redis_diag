@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2016-08-05T21:59:48Z" product-name="redisdiag">
+		<header/>
+		<body>
+			<trans-unit id="tx_redisdiag_domain_model_redis">
+				<source>Redis</source>
+			</trans-unit>
+			<trans-unit id="tx_redisdiag_domain_model_redis.ipaddr">
+				<source>Ipaddr</source>
+			</trans-unit>
+			
+			
+			<trans-unit id="section.server">
+				<source>Server</source>
+			</trans-unit>
+			<trans-unit id="th.ipaddr">
+				<source>Server: </source>
+			</trans-unit>
+			<trans-unit id="th.mode">
+				<source>Mode: </source>
+			</trans-unit>
+			<trans-unit id="th.uptime">
+				<source>Uptime: </source>
+			</trans-unit>
+			<trans-unit id="th.version">
+				<source>Version: </source>
+			</trans-unit>
+			<trans-unit id="th.connected_clients">
+				<source>Connected clients: </source>
+			</trans-unit>
+
+			<trans-unit id="section.memory">
+				<source>Memory</source>
+			</trans-unit>
+			<trans-unit id="th.used_memory_human">
+				<source>Total number of bytes allocated: </source>
+			</trans-unit>
+			<trans-unit id="th.used_memory_rss_human">
+				<source>Number of bytes that Redis allocated from OS: </source>
+			</trans-unit>
+			<trans-unit id="th.used_memory_peak_human">
+				<source>Peak memory: </source>
+			</trans-unit>
+			<trans-unit id="th.used_memory_peak_perc">
+				<source>Percentage peak memory: </source>
+			</trans-unit>
+			<trans-unit id="th.used_memory_dataset_perc">
+				<source>Percentage of used dataset memory: </source>
+			</trans-unit>
+			<trans-unit id="th.total_system_memory_human">
+				<source>The total amount of memory of host: </source>
+			</trans-unit>
+			<trans-unit id="th.maxmemory_human">
+				<source>maxmemory configuration directive: </source>
+			</trans-unit>
+			<trans-unit id="th.maxmemory_policy">
+				<source>maxmemory-policy configuration directive: </source>
+			</trans-unit>
+			<trans-unit id="th.mem_fragmentation_ratio">
+				<source>Fragmentation ratio: </source>
+			</trans-unit>
+
+			<trans-unit id="section.persistence">
+				<source>Persistence</source>
+			</trans-unit>
+			<trans-unit id="th.rdb_changes_since_last_save">
+				<source>Number of changes since the last dump: </source>
+			</trans-unit>
+			<trans-unit id="th.rdb_last_save_time">
+				<source>last successful RDB save: </source>
+			</trans-unit>
+			<trans-unit id="th.rdb_last_bgsave_status">
+				<source>Status of the last RDB save operation: </source>
+			</trans-unit>
+
+			<trans-unit id="section.stats">
+				<source>Stats</source>
+			</trans-unit>
+			<trans-unit id="th.total_connections_received">
+				<source>Total number of connections accepted by the server: </source>
+			</trans-unit>
+			<trans-unit id="th.total_commands_processed">
+				<source> Total number of commands processed by the server: </source>
+			</trans-unit>
+			<trans-unit id="th.instantaneous_ops_per_sec">
+				<source>Number of commands processed per second: </source>
+			</trans-unit>
+			<trans-unit id="th.total_net_input_bytes">
+				<source>The total number of bytes read from the network: </source>
+			</trans-unit>
+			<trans-unit id="th.total_net_output_bytes">
+				<source>The total number of bytes written to the network: </source>
+			</trans-unit>
+			<trans-unit id="th.instantaneous_input_kbps">
+				<source>The network's read rate per second in KB/sec:</source>
+			</trans-unit>
+			<trans-unit id="th.instantaneous_output_kbps">
+				<source>The network's write rate per second in KB/sec:</source>
+			</trans-unit>
+			<trans-unit id="th.rejected_connections">
+				<source>Number of connections rejected because of maxclients limit</source>
+			</trans-unit>
+			<trans-unit id="th.expired_keys">
+				<source>Total number of key expiration events</source>
+			</trans-unit>
+			<trans-unit id="th.evicted_keys">
+				<source> Number of evicted keys due to maxmemory limit</source>
+			</trans-unit>
+			<trans-unit id="th.keyspace_hits">
+				<source>Number of successful lookup of keys in the main dictionary</source>
+			</trans-unit>
+			<trans-unit id="th.keyspace_misses">
+				<source>Number of failed lookup of keys in the main dictionary</source>
+			</trans-unit>
+
+			<trans-unit id="section.cpu">
+				<source>CPU</source>
+			</trans-unit>
+			<trans-unit id="th.used_cpu_sys">
+				<source>System CPU consumed by the Redis server: </source>
+			</trans-unit>
+			<trans-unit id="th.used_cpu_user">
+				<source>User CPU consumed by the Redis server: </source>
+			</trans-unit>
+			<trans-unit id="th.used_cpu_sys_children">
+				<source>System CPU consumed by the background processes: </source>
+			</trans-unit>
+			<trans-unit id="th.used_cpu_user_children">
+				<source>User CPU consumed by the background processes: </source>
+			</trans-unit>
+
+			<trans-unit id="vh.days">
+				<source>days</source>
+			</trans-unit>
+			<trans-unit id="vh.hours">
+				<source>hours</source>
+			</trans-unit>
+			<trans-unit id="vh.minutes">
+				<source>minutes</source>
+			</trans-unit>
+			<trans-unit id="vh.seconds">
+				<source>seconds</source>
+			</trans-unit>
+
+		</body>
+	</file>
+</xliff>
