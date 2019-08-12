@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2016-08-05T21:59:48Z" product-name="redisdiag">
+	<file source-language="en" datatype="plaintext" original="messages" date="2016-08-05T21:59:48Z" product-name="redis_diag">
 		<header/>
 		<body>
 			<trans-unit id="mlang_tabs_tab">

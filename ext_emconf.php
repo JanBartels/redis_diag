@@ -1,7 +1,7 @@
 <?php
 
 /***************************************************************
- * Extension Manager/Repository config file for ext: "redisdiag"
+ * Extension Manager/Repository config file for ext: "redis_diag"
  *
  * Manual updates:
  * Only the data in the array - anything else is removed by next write.

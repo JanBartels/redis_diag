@@ -16,6 +16,6 @@
 Changelog
 ---------
 
-- https://github.com/jbartels/redis_diag/repository
+- https://github.com/jbartels/redis_diag
 
 

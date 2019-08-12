@@ -1,5 +1,5 @@
 <?php
-namespace JBartels\Redisdiag\Controller;
+namespace JBartels\RedisDiag\Controller;
 
 
 /***************************************************************

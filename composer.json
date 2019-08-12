@@ -12,14 +12,14 @@
 	],
 	"autoload": {
 		"psr-4": {
-			"JBartels\\Redisdiag\\": "Classes/"
+			"JBartels\\RedisDiag\\": "Classes/"
 		}
 	},
 	"require": {
 		"typo3/cms-core": ">=7.6.0,<=9.5.99"
 	},
 	"replace": {
-		"redisdiag": "self.version",
-		"typo3-ter/redisdiag": "self.version"
+		"redis_diag": "self.version",
+		"typo3-ter/redis_diag": "self.version"
 	}
 }

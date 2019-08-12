@@ -1,5 +1,5 @@
 <?php
-namespace JBartels\Redisdiag\ViewHelpers;
+namespace JBartels\RedisDiag\ViewHelpers;
 
 
 /***************************************************************
@@ -47,16 +47,16 @@ class DurationViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHe
 		$seconds = $duration % 60;
 
 		if( $days > 0 ) {
-			$content .= $days . ' ' . \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate( 'vh.days', 'redisdiag' );
+			$content .= $days . ' ' . \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate( 'vh.days', 'redis_diag' );
 		}
 		if( $hours > 0 || $minutes > 0 || $seconds > 0 ) {
-			$content .= ' ' . $hours . ' ' . \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate( 'vh.hours', 'redisdiag' );
+			$content .= ' ' . $hours . ' ' . \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate( 'vh.hours', 'redis_diag' );
 		}
 		if( $minutes > 0 || $seconds > 0 ) {
-			$content .= ' ' . $minutes . ' ' . \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate( 'vh.minutes', 'redisdiag' );
+			$content .= ' ' . $minutes . ' ' . \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate( 'vh.minutes', 'redis_diag' );
 		}
 		if( $seconds > 0 ) {
-			$content .= ' ' . $seconds . ' ' . \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate( 'vh.seconds', 'redisdiag' );
+			$content .= ' ' . $seconds . ' ' . \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate( 'vh.seconds', 'redis_diag' );
 		}
 		return $content;
 	}
