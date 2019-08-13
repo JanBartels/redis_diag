@@ -83,7 +83,7 @@ class RedisController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 		$servers = array_unique( $servers );
 
 		if ( count( $servers ) === 0 ) {
-			return $null;
+			return null;
 		}
 
 		// add all redis-servers
