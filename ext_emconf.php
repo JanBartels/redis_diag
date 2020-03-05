@@ -12,7 +12,7 @@ $EM_CONF[$_EXTKEY] = array(
 	'title' => 'redis_diag',
 	'description' => 'Displays diagnosis information about redis',
 	'category' => 'module',
-	'version' => '1.0.0',
+	'version' => '1.0.1',
 	'author' => 'Jan Bartels',
 	'author_email' => 'j.bartels@arcor.de',
 	'state' => 'stable',
@@ -23,7 +23,7 @@ $EM_CONF[$_EXTKEY] = array(
 	'constraints' => array(
 		'depends' => array(
 			'typo3' => '7.6.0-9.5.99',
-			'php' => '7.0.0-7.2.99',
+			'php' => '7.0.0-7.3.99',
 		),
 		'conflicts' => array(
 		),

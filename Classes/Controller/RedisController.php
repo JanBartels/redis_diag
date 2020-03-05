@@ -77,10 +77,9 @@ class RedisController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 					if ( $valueCache[ 'options' ][ 'port' ] )
 						$port = $valueCache[ 'options' ][ 'port' ];
 				}
-				$servers[] = $hostname . ':' . $port;
+				$servers[ $hostname . ':' . $port ] = $valueCache[ 'options' ];
 			}
 		}
-		$servers = array_unique( $servers );
 
 		if ( count( $servers ) === 0 ) {
 			return null;
@@ -91,12 +90,17 @@ class RedisController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 
 		$caches = array();
 
-		foreach( $servers as $server ) {
+		foreach( $servers as $server => $options ) {
 			$serveroptions = explode( ':', $server );
-			$redis->connect( $serveroptions[ 0 ], $serveroptions[ 1 ] );
-			$caches[ $server ] = $redis->info();
-			$redis->close();
-
+			$connectionTimeout = 0;
+			if ( $options[ 'connectionTimeout' ] )
+				$connectionTimeout = $options[ 'connectionTimeout' ];
+			if ( $redis->connect( $serveroptions[ 0 ], $serveroptions[ 1 ], $connectionTimeout ) ) {
+				if ( $options[ 'password' ] !== '' ) 
+					$redis->auth( $options[ 'password' ] );
+				$caches[ $server ] = $redis->info();
+				$redis->close();
+			}
 		}
 
 		return $caches;
